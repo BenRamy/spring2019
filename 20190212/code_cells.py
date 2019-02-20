@@ -20,8 +20,10 @@ plt.show()
 
 
 #%% Letters
-[chr(i+65) for i in range(26)]
+#[chr(i+65) for i in range(26)]
 
+l1 = 1, 2, 3
+l2 = 3, 4, 5, 6
 
 #%% names: interests dictionary
 d = {
@@ -30,6 +32,19 @@ d = {
        'Diane': 'metabolomics'
        }
 
+d2 = {
+       'Ben' : "movies"
+}
+
+#%% test
+dict(**d,**d2)
+dict(zip(l1, l2))
+list(zip(l1,l2))
+
+a, *b = l2
+
+a
+b
 #%% Search dictionary for close matches
 import difflib
 def search_dict(query, dictionary, cutoff=0.8):
